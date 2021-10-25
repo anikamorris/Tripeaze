@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF3CF17A27274C0000DE47BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17927274C0000DE47BD /* AppDelegate.swift */; };
+		CF3CF17C27274C0000DE47BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */; };
+		CF3CF17E27274C0000DE47BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17D27274C0000DE47BD /* ViewController.swift */; };
+		CF3CF18327274C0100DE47BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF18227274C0100DE47BD /* Assets.xcassets */; };
+		CF3CF18627274C0100DE47BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF18427274C0100DE47BD /* LaunchScreen.storyboard */; };
+		CF3CF19127274C0100DE47BD /* TripeazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF19027274C0100DE47BD /* TripeazeTests.swift */; };
+		CF3CF19C27274C0100DE47BD /* TripeazeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF19B27274C0100DE47BD /* TripeazeUITests.swift */; };
+		CF3CF1AB27274C8A00DE47BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1AA27274C8A00DE47BD /* User.swift */; };
+		CF3CF1AD27274C9C00DE47BD /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1AC27274C9C00DE47BD /* Destination.swift */; };
+		CF3CF1B22727510200DE47BD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B12727510200DE47BD /* Coordinator.swift */; };
+		CF3CF1B42727512400DE47BD /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B32727512400DE47BD /* TabBarCoordinator.swift */; };
+		CF3CF1B8272751A300DE47BD /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B7272751A300DE47BD /* UIColor+AppColors.swift */; };
+		CF3CF1BA272752BF00DE47BD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */; };
+		CF3CF1BC272752E900DE47BD /* DestinationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */; };
+		CF3CF1BE2727571700DE47BD /* ProfileStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1BD2727571700DE47BD /* ProfileStackView.swift */; };
+		CF3CF1C027275DB500DE47BD /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1BF27275DB500DE47BD /* DestinationCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF3CF18D27274C0100DE47BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF3CF16E27274C0000DE47BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF3CF17527274C0000DE47BD;
+			remoteInfo = Tripeaze;
+		};
+		CF3CF19827274C0100DE47BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF3CF16E27274C0000DE47BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF3CF17527274C0000DE47BD;
+			remoteInfo = Tripeaze;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF3CF17627274C0000DE47BD /* Tripeaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tripeaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3CF17927274C0000DE47BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CF3CF17D27274C0000DE47BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF3CF18227274C0100DE47BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF3CF18527274C0100DE47BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF3CF18727274C0100DE47BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF3CF18C27274C0100DE47BD /* TripeazeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripeazeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3CF19027274C0100DE47BD /* TripeazeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripeazeTests.swift; sourceTree = "<group>"; };
+		CF3CF19227274C0100DE47BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF3CF19727274C0100DE47BD /* TripeazeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripeazeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3CF19B27274C0100DE47BD /* TripeazeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripeazeUITests.swift; sourceTree = "<group>"; };
+		CF3CF19D27274C0100DE47BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF3CF1AA27274C8A00DE47BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CF3CF1AC27274C9C00DE47BD /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		CF3CF1B12727510200DE47BD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CF3CF1B32727512400DE47BD /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		CF3CF1B7272751A300DE47BD /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsVC.swift; sourceTree = "<group>"; };
+		CF3CF1BD2727571700DE47BD /* ProfileStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStackView.swift; sourceTree = "<group>"; };
+		CF3CF1BF27275DB500DE47BD /* DestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF3CF17327274C0000DE47BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3CF18927274C0100DE47BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3CF19427274C0100DE47BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF3CF16D27274C0000DE47BD = {
+			isa = PBXGroup;
+			children = (
+				CF3CF17827274C0000DE47BD /* Tripeaze */,
+				CF3CF18F27274C0100DE47BD /* TripeazeTests */,
+				CF3CF19A27274C0100DE47BD /* TripeazeUITests */,
+				CF3CF17727274C0000DE47BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF3CF17727274C0000DE47BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF17627274C0000DE47BD /* Tripeaze.app */,
+				CF3CF18C27274C0100DE47BD /* TripeazeTests.xctest */,
+				CF3CF19727274C0100DE47BD /* TripeazeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF3CF17827274C0000DE47BD /* Tripeaze */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1B52727518B00DE47BD /* Helpers */,
+				CF3CF1B02727503C00DE47BD /* Coordinators */,
+				CF3CF1AF2727503500DE47BD /* Controllers */,
+				CF3CF1AE2727502800DE47BD /* Views */,
+				CF3CF1A927274C7300DE47BD /* Models */,
+				CF3CF17927274C0000DE47BD /* AppDelegate.swift */,
+				CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */,
+				CF3CF17D27274C0000DE47BD /* ViewController.swift */,
+				CF3CF18227274C0100DE47BD /* Assets.xcassets */,
+				CF3CF18427274C0100DE47BD /* LaunchScreen.storyboard */,
+				CF3CF18727274C0100DE47BD /* Info.plist */,
+			);
+			path = Tripeaze;
+			sourceTree = "<group>";
+		};
+		CF3CF18F27274C0100DE47BD /* TripeazeTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF19027274C0100DE47BD /* TripeazeTests.swift */,
+				CF3CF19227274C0100DE47BD /* Info.plist */,
+			);
+			path = TripeazeTests;
+			sourceTree = "<group>";
+		};
+		CF3CF19A27274C0100DE47BD /* TripeazeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF19B27274C0100DE47BD /* TripeazeUITests.swift */,
+				CF3CF19D27274C0100DE47BD /* Info.plist */,
+			);
+			path = TripeazeUITests;
+			sourceTree = "<group>";
+		};
+		CF3CF1A927274C7300DE47BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1AA27274C8A00DE47BD /* User.swift */,
+				CF3CF1AC27274C9C00DE47BD /* Destination.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF3CF1AE2727502800DE47BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1BD2727571700DE47BD /* ProfileStackView.swift */,
+				CF3CF1BF27275DB500DE47BD /* DestinationCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CF3CF1AF2727503500DE47BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */,
+				CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CF3CF1B02727503C00DE47BD /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1B12727510200DE47BD /* Coordinator.swift */,
+				CF3CF1B32727512400DE47BD /* TabBarCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CF3CF1B52727518B00DE47BD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1B62727519100DE47BD /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CF3CF1B62727519100DE47BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1B7272751A300DE47BD /* UIColor+AppColors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF3CF17527274C0000DE47BD /* Tripeaze */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3CF1A027274C0100DE47BD /* Build configuration list for PBXNativeTarget "Tripeaze" */;
+			buildPhases = (
+				CF3CF17227274C0000DE47BD /* Sources */,
+				CF3CF17327274C0000DE47BD /* Frameworks */,
+				CF3CF17427274C0000DE47BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tripeaze;
+			productName = Tripeaze;
+			productReference = CF3CF17627274C0000DE47BD /* Tripeaze.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF3CF18B27274C0100DE47BD /* TripeazeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3CF1A327274C0100DE47BD /* Build configuration list for PBXNativeTarget "TripeazeTests" */;
+			buildPhases = (
+				CF3CF18827274C0100DE47BD /* Sources */,
+				CF3CF18927274C0100DE47BD /* Frameworks */,
+				CF3CF18A27274C0100DE47BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF3CF18E27274C0100DE47BD /* PBXTargetDependency */,
+			);
+			name = TripeazeTests;
+			productName = TripeazeTests;
+			productReference = CF3CF18C27274C0100DE47BD /* TripeazeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF3CF19627274C0100DE47BD /* TripeazeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3CF1A627274C0100DE47BD /* Build configuration list for PBXNativeTarget "TripeazeUITests" */;
+			buildPhases = (
+				CF3CF19327274C0100DE47BD /* Sources */,
+				CF3CF19427274C0100DE47BD /* Frameworks */,
+				CF3CF19527274C0100DE47BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF3CF19927274C0100DE47BD /* PBXTargetDependency */,
+			);
+			name = TripeazeUITests;
+			productName = TripeazeUITests;
+			productReference = CF3CF19727274C0100DE47BD /* TripeazeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF3CF16E27274C0000DE47BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					CF3CF17527274C0000DE47BD = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					CF3CF18B27274C0100DE47BD = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = CF3CF17527274C0000DE47BD;
+					};
+					CF3CF19627274C0100DE47BD = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = CF3CF17527274C0000DE47BD;
+					};
+				};
+			};
+			buildConfigurationList = CF3CF17127274C0000DE47BD /* Build configuration list for PBXProject "Tripeaze" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF3CF16D27274C0000DE47BD;
+			productRefGroup = CF3CF17727274C0000DE47BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF3CF17527274C0000DE47BD /* Tripeaze */,
+				CF3CF18B27274C0100DE47BD /* TripeazeTests */,
+				CF3CF19627274C0100DE47BD /* TripeazeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF3CF17427274C0000DE47BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3CF18627274C0100DE47BD /* LaunchScreen.storyboard in Resources */,
+				CF3CF18327274C0100DE47BD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3CF18A27274C0100DE47BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3CF19527274C0100DE47BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF3CF17227274C0000DE47BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3CF1AB27274C8A00DE47BD /* User.swift in Sources */,
+				CF3CF1BC272752E900DE47BD /* DestinationsVC.swift in Sources */,
+				CF3CF17E27274C0000DE47BD /* ViewController.swift in Sources */,
+				CF3CF1B22727510200DE47BD /* Coordinator.swift in Sources */,
+				CF3CF1BA272752BF00DE47BD /* ProfileVC.swift in Sources */,
+				CF3CF1B42727512400DE47BD /* TabBarCoordinator.swift in Sources */,
+				CF3CF1C027275DB500DE47BD /* DestinationCell.swift in Sources */,
+				CF3CF1AD27274C9C00DE47BD /* Destination.swift in Sources */,
+				CF3CF1B8272751A300DE47BD /* UIColor+AppColors.swift in Sources */,
+				CF3CF17A27274C0000DE47BD /* AppDelegate.swift in Sources */,
+				CF3CF1BE2727571700DE47BD /* ProfileStackView.swift in Sources */,
+				CF3CF17C27274C0000DE47BD /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3CF18827274C0100DE47BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3CF19127274C0100DE47BD /* TripeazeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF3CF19327274C0100DE47BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3CF19C27274C0100DE47BD /* TripeazeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF3CF18E27274C0100DE47BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF3CF17527274C0000DE47BD /* Tripeaze */;
+			targetProxy = CF3CF18D27274C0100DE47BD /* PBXContainerItemProxy */;
+		};
+		CF3CF19927274C0100DE47BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF3CF17527274C0000DE47BD /* Tripeaze */;
+			targetProxy = CF3CF19827274C0100DE47BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF3CF18427274C0100DE47BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF3CF18527274C0100DE47BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF3CF19E27274C0100DE47BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF3CF19F27274C0100DE47BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF3CF1A127274C0100DE47BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HXYM5H2DXG;
+				INFOPLIST_FILE = Tripeaze/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anikamorris.Tripeaze;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF3CF1A227274C0100DE47BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HXYM5H2DXG;
+				INFOPLIST_FILE = Tripeaze/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anikamorris.Tripeaze;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF3CF1A427274C0100DE47BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HXYM5H2DXG;
+				INFOPLIST_FILE = TripeazeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anikamorris.TripeazeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tripeaze.app/Tripeaze";
+			};
+			name = Debug;
+		};
+		CF3CF1A527274C0100DE47BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HXYM5H2DXG;
+				INFOPLIST_FILE = TripeazeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anikamorris.TripeazeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tripeaze.app/Tripeaze";
+			};
+			name = Release;
+		};
+		CF3CF1A727274C0100DE47BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HXYM5H2DXG;
+				INFOPLIST_FILE = TripeazeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anikamorris.TripeazeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tripeaze;
+			};
+			name = Debug;
+		};
+		CF3CF1A827274C0100DE47BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HXYM5H2DXG;
+				INFOPLIST_FILE = TripeazeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anikamorris.TripeazeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tripeaze;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF3CF17127274C0000DE47BD /* Build configuration list for PBXProject "Tripeaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3CF19E27274C0100DE47BD /* Debug */,
+				CF3CF19F27274C0100DE47BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF3CF1A027274C0100DE47BD /* Build configuration list for PBXNativeTarget "Tripeaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3CF1A127274C0100DE47BD /* Debug */,
+				CF3CF1A227274C0100DE47BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF3CF1A327274C0100DE47BD /* Build configuration list for PBXNativeTarget "TripeazeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3CF1A427274C0100DE47BD /* Debug */,
+				CF3CF1A527274C0100DE47BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF3CF1A627274C0100DE47BD /* Build configuration list for PBXNativeTarget "TripeazeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3CF1A727274C0100DE47BD /* Debug */,
+				CF3CF1A827274C0100DE47BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF3CF16E27274C0000DE47BD /* Project object */;
+}
