@@ -1,5 +1,5 @@
 //
-//  SignUpVC.swift
+//  LoginVC.swift
 //  Tripeaze
 //
 //  Created by Anika Morris on 10/25/21.
@@ -7,11 +7,11 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
 
-class SignUpController: UIViewController {
+class LoginController: UIViewController {
     
     //MARK: Properties
+    weak var coordinator: MainCoordinator?
     
     //MARK: Subviews
     let emailTextField: UITextField = {
@@ -26,11 +26,11 @@ class SignUpController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
-    let signUpButton: UIButton = {
+    let loginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Sign up", for: .normal)
+        button.setTitle("Login", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -45,7 +45,7 @@ class SignUpController: UIViewController {
         view.backgroundColor = .backgroundColor
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
-        view.addSubview(signUpButton)
+        view.addSubview(loginButton)
         NSLayoutConstraint.activate([
             emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -57,10 +57,10 @@ class SignUpController: UIViewController {
             passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             passwordTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-            signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            signUpButton.heightAnchor.constraint(equalToConstant: 40)
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            loginButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     
@@ -68,22 +68,20 @@ class SignUpController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    @objc func didTapSignUpButton() {
-        let signUpManager = FirebaseAuthManager()
-        if let email = emailTextField.text, let password = passwordTextField.text {
-            signUpManager.createUser(email: email, password: password) {[weak self] (success) in
-                guard let `self` = self else { return }
-                var message: String = ""
-                if (success) {
-                    message = "User was sucessfully created."
-                    self.navigationController?.pushViewController(MainTabBarController(), animated: true)
-                } else {
-                    message = "There was an error."
-                }
-                let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.display(alertController: alertController)
+    @objc func didTapLoginButton() {
+        let loginManager = FirebaseAuthManager()
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        loginManager.signIn(email: email, pass: password) {[weak self] (success) in
+            guard let `self` = self else { return }
+            var message: String = ""
+            if (success) {
+                message = "User was sucessfully logged in."
+            } else {
+                message = "There was an error."
             }
+            let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.display(alertController: alertController)
         }
     }
 }

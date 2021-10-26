@@ -16,12 +16,26 @@ class FirebaseAuthManager {
                 print(user)
                 completionBlock(true)
             } else {
-                print("Firebase auth error: \(error?.localizedDescription), \(error.debugDescription)")
-                if let error = error as NSError? {
-                    print(error)
-                }
                 completionBlock(false)
             }
+        }
+    }
+    
+    func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
+            if let error = error, let _ = AuthErrorCode(rawValue: error._code) {
+                completionBlock(false)
+            } else {
+                completionBlock(true)
+            }
+        }
+    }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
         }
     }
 }

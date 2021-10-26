@@ -11,18 +11,18 @@ import UIKit
 class ProfileStackView: UIView {
     
     //MARK: Subviews
-    let usernameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Username"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
+    let usernameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Username"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-    let nameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Name"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Name"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let stackView: UIStackView = {
@@ -46,8 +46,8 @@ class ProfileStackView: UIView {
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-        stackView.addArrangedSubview(nameTextField)
-        stackView.addArrangedSubview(usernameTextField)
+        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(usernameLabel)
     }
     
     required init?(coder: NSCoder) {

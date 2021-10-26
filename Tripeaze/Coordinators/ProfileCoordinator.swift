@@ -30,6 +30,10 @@ class ProfileCoordinator: NSObject, Coordinator {
         navigationController.pushViewController(profileController, animated: false)
     }
     
+    func signOut() {
+        FirebaseAuthManager().signOut()
+    }
+    
     func childDidFinish(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {

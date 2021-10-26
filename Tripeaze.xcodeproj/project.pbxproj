@@ -33,6 +33,9 @@
 		CF3CF1CA2727927A00DE47BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */; };
 		CF3CF1CD2727971A00DE47BD /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1CC2727971A00DE47BD /* FirebaseAuthManager.swift */; };
 		CF3CF1CF272797AA00DE47BD /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1CE272797AA00DE47BD /* SignUpVC.swift */; };
+		CFA49EB52727AE0F00A2294D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA49EB42727AE0F00A2294D /* LoginVC.swift */; };
+		CFA49EB72727B3FC00A2294D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA49EB62727B3FC00A2294D /* MainCoordinator.swift */; };
+		CFA49EBA2727B4BE00A2294D /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA49EB92727B4BE00A2294D /* LandingVC.swift */; };
 		DD18E855D62A1ACF7F3F51A1 /* Pods_TripeazeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B07E08E87A630C6D5EA6A6 /* Pods_TripeazeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF3CF1CC2727971A00DE47BD /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		CF3CF1CE272797AA00DE47BD /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		CFA49EB42727AE0F00A2294D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		CFA49EB62727B3FC00A2294D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		CFA49EB92727B4BE00A2294D /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		D8ABE0AC88E3FCE452CBE3B5 /* Pods-Tripeaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripeaze.debug.xcconfig"; path = "Target Support Files/Pods-Tripeaze/Pods-Tripeaze.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,11 +231,11 @@
 		CF3CF1AF2727503500DE47BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CFA49EB82727B48300A2294D /* Onboarding */,
 				CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */,
 				CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */,
 				CF3CF1C32727718200DE47BD /* MainTabBarController.swift */,
 				CF3CF1C5272774D900DE47BD /* NewDestinationVC.swift */,
-				CF3CF1CE272797AA00DE47BD /* SignUpVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 				CF3CF1B12727510200DE47BD /* Coordinator.swift */,
 				CF3CF1B32727512400DE47BD /* ProfileCoordinator.swift */,
 				CF3CF1C127276C4700DE47BD /* DestinationCoordinator.swift */,
+				CFA49EB62727B3FC00A2294D /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -266,6 +273,16 @@
 				CF3CF1CC2727971A00DE47BD /* FirebaseAuthManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		CFA49EB82727B48300A2294D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CFA49EB42727AE0F00A2294D /* LoginVC.swift */,
+				CF3CF1CE272797AA00DE47BD /* SignUpVC.swift */,
+				CFA49EB92727B4BE00A2294D /* LandingVC.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +539,9 @@
 				CF3CF1AD27274C9C00DE47BD /* Destination.swift in Sources */,
 				CF3CF1B8272751A300DE47BD /* UIColor+AppColors.swift in Sources */,
 				CF3CF17A27274C0000DE47BD /* AppDelegate.swift in Sources */,
+				CFA49EB72727B3FC00A2294D /* MainCoordinator.swift in Sources */,
+				CFA49EB52727AE0F00A2294D /* LoginVC.swift in Sources */,
+				CFA49EBA2727B4BE00A2294D /* LandingVC.swift in Sources */,
 				CF3CF1BE2727571700DE47BD /* ProfileStackView.swift in Sources */,
 				CF3CF17C27274C0000DE47BD /* SceneDelegate.swift in Sources */,
 				CF3CF1CF272797AA00DE47BD /* SignUpVC.swift in Sources */,
