@@ -10,15 +10,13 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator: TabBarCoordinator!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = MainTabBarController()
         window!.makeKeyAndVisible()
         window!.windowScene = windowScene
-        coordinator = TabBarCoordinator(window: window!)
-        coordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

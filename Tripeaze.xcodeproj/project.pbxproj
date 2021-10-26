@@ -17,12 +17,15 @@
 		CF3CF1AB27274C8A00DE47BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1AA27274C8A00DE47BD /* User.swift */; };
 		CF3CF1AD27274C9C00DE47BD /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1AC27274C9C00DE47BD /* Destination.swift */; };
 		CF3CF1B22727510200DE47BD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B12727510200DE47BD /* Coordinator.swift */; };
-		CF3CF1B42727512400DE47BD /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B32727512400DE47BD /* TabBarCoordinator.swift */; };
+		CF3CF1B42727512400DE47BD /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B32727512400DE47BD /* ProfileCoordinator.swift */; };
 		CF3CF1B8272751A300DE47BD /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B7272751A300DE47BD /* UIColor+AppColors.swift */; };
 		CF3CF1BA272752BF00DE47BD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */; };
 		CF3CF1BC272752E900DE47BD /* DestinationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */; };
 		CF3CF1BE2727571700DE47BD /* ProfileStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1BD2727571700DE47BD /* ProfileStackView.swift */; };
 		CF3CF1C027275DB500DE47BD /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1BF27275DB500DE47BD /* DestinationCell.swift */; };
+		CF3CF1C227276C4700DE47BD /* DestinationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1C127276C4700DE47BD /* DestinationCoordinator.swift */; };
+		CF3CF1C42727718200DE47BD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1C32727718200DE47BD /* MainTabBarController.swift */; };
+		CF3CF1C6272774D900DE47BD /* NewDestinationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1C5272774D900DE47BD /* NewDestinationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +62,15 @@
 		CF3CF1AA27274C8A00DE47BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF3CF1AC27274C9C00DE47BD /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		CF3CF1B12727510200DE47BD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		CF3CF1B32727512400DE47BD /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		CF3CF1B32727512400DE47BD /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		CF3CF1B7272751A300DE47BD /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsVC.swift; sourceTree = "<group>"; };
 		CF3CF1BD2727571700DE47BD /* ProfileStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStackView.swift; sourceTree = "<group>"; };
 		CF3CF1BF27275DB500DE47BD /* DestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
+		CF3CF1C127276C4700DE47BD /* DestinationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCoordinator.swift; sourceTree = "<group>"; };
+		CF3CF1C32727718200DE47BD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CF3CF1C5272774D900DE47BD /* NewDestinationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDestinationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,8 @@
 			children = (
 				CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */,
 				CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */,
+				CF3CF1C32727718200DE47BD /* MainTabBarController.swift */,
+				CF3CF1C5272774D900DE47BD /* NewDestinationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,7 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				CF3CF1B12727510200DE47BD /* Coordinator.swift */,
-				CF3CF1B32727512400DE47BD /* TabBarCoordinator.swift */,
+				CF3CF1B32727512400DE47BD /* ProfileCoordinator.swift */,
+				CF3CF1C127276C4700DE47BD /* DestinationCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -332,9 +341,12 @@
 				CF3CF1AB27274C8A00DE47BD /* User.swift in Sources */,
 				CF3CF1BC272752E900DE47BD /* DestinationsVC.swift in Sources */,
 				CF3CF17E27274C0000DE47BD /* ViewController.swift in Sources */,
+				CF3CF1C42727718200DE47BD /* MainTabBarController.swift in Sources */,
 				CF3CF1B22727510200DE47BD /* Coordinator.swift in Sources */,
 				CF3CF1BA272752BF00DE47BD /* ProfileVC.swift in Sources */,
-				CF3CF1B42727512400DE47BD /* TabBarCoordinator.swift in Sources */,
+				CF3CF1C6272774D900DE47BD /* NewDestinationVC.swift in Sources */,
+				CF3CF1B42727512400DE47BD /* ProfileCoordinator.swift in Sources */,
+				CF3CF1C227276C4700DE47BD /* DestinationCoordinator.swift in Sources */,
 				CF3CF1C027275DB500DE47BD /* DestinationCell.swift in Sources */,
 				CF3CF1AD27274C9C00DE47BD /* Destination.swift in Sources */,
 				CF3CF1B8272751A300DE47BD /* UIColor+AppColors.swift in Sources */,

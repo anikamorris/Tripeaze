@@ -11,7 +11,7 @@ import UIKit
 class ProfileController: UIViewController {
     
     //MARK: Properties
-    var coordinator: TabBarCoordinator!
+    weak var coordinator: ProfileCoordinator?
     
     //MARK: Views
     let profileStackView = ProfileStackView()

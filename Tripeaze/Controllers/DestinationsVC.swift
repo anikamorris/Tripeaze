@@ -11,7 +11,7 @@ import UIKit
 class DestinationsController: UIViewController {
     
     //MARK: Properties
-    var coordinator: TabBarCoordinator!
+    weak var coordinator: DestinationCoordinator?
     var destinations: [Destination] = [Destination(name: "Italy")]
     
     //MARK: Views
@@ -24,13 +24,19 @@ class DestinationsController: UIViewController {
     
     //MARK: Lifecycle
     override func viewDidLoad() {
+        self.title = "Destinations"
         tableView.delegate = self
         tableView.dataSource = self
         setUpViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     //MARK: Methods
     private func setUpViews() {
+        navigationItem.rightBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addDestination))
         view.backgroundColor = .backgroundColor
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -39,6 +45,10 @@ class DestinationsController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    @objc func addDestination() {
+        coordinator?.addDestination()
     }
 }
 
