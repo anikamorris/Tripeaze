@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpController: UIViewController {
     
@@ -15,6 +15,18 @@ class SignUpController: UIViewController {
     weak var coordinator: MainCoordinator?
     
     //MARK: Subviews
+    let nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Name"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    let usernameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Username"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
     let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Email"
@@ -44,11 +56,23 @@ class SignUpController: UIViewController {
     //MARK: Methods
     private func setUpViews() {
         view.backgroundColor = .backgroundColor
+        view.addSubview(nameTextField)
+        view.addSubview(usernameTextField)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(signUpButton)
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            nameTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            usernameTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 30),
+            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            usernameTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            emailTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 30),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
@@ -72,19 +96,22 @@ class SignUpController: UIViewController {
     @objc func didTapSignUpButton() {
         let signUpManager = FirebaseAuthManager()
         let alertController = UIAlertController(title: nil, message: "", preferredStyle: .alert)
-        if let email = emailTextField.text, let password = passwordTextField.text {
-            signUpManager.createUser(email: email, password: password) {[weak self] (success) in
-                guard let `self` = self else { return }
-                if (success) {
-                    alertController.message = "User was sucessfully created."
-                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-                        self.coordinator?.goToHome()
-                    }))
-                } else {
-                    alertController.message = "There was an error signing up. Please try again."
-                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                }
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        if let name = nameTextField.text, let username = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text {
+            if name.isEmpty || username.isEmpty {
+                alertController.message = "Please fill out all fields."
                 self.display(alertController: alertController)
+            } else {
+                signUpManager.createUser(email: email, password: password) {[weak self] (user) in
+                    guard let `self` = self else { return }
+                    guard let user = user else {
+                        alertController.message = "There was an error signing up. Please try again."
+                        self.display(alertController: alertController)
+                        return
+                    }
+                    signUpManager.setNameAndUsername(for: user, name: name, username: username)
+                    self.coordinator?.goToHome()
+                }
             }
         }
     }

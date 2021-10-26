@@ -7,18 +7,32 @@
 
 import Foundation
 import UIKit
+import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class FirebaseAuthManager {
-    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
+    
+    //MARK: Properties
+    var ref: DatabaseReference! = Database.database().reference()
+    
+    //MARK: Methods
+    func createUser(email: String, password: String, completionBlock: @escaping (_ success: User?) -> Void) {
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let user = authResult?.user {
-                print(user)
-                completionBlock(true)
+                completionBlock(user)
             } else {
-                completionBlock(false)
+                completionBlock(nil)
             }
         }
+    }
+    
+    func setNameAndUsername(for user: User, name: String, username: String) {
+        var dataDictionary: [String: Any] = [:]
+        dataDictionary["name"] = name
+        dataDictionary["username"] = username
+        ref.child("users").child(user.uid).setValue(dataDictionary)
     }
     
     func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {

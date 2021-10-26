@@ -16,7 +16,6 @@
 		CF3CF18627274C0100DE47BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF18427274C0100DE47BD /* LaunchScreen.storyboard */; };
 		CF3CF19127274C0100DE47BD /* TripeazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF19027274C0100DE47BD /* TripeazeTests.swift */; };
 		CF3CF19C27274C0100DE47BD /* TripeazeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF19B27274C0100DE47BD /* TripeazeUITests.swift */; };
-		CF3CF1AB27274C8A00DE47BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1AA27274C8A00DE47BD /* User.swift */; };
 		CF3CF1AD27274C9C00DE47BD /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1AC27274C9C00DE47BD /* Destination.swift */; };
 		CF3CF1B22727510200DE47BD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B12727510200DE47BD /* Coordinator.swift */; };
 		CF3CF1B42727512400DE47BD /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1B32727512400DE47BD /* ProfileCoordinator.swift */; };
@@ -78,7 +77,6 @@
 		CF3CF19727274C0100DE47BD /* TripeazeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripeazeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3CF19B27274C0100DE47BD /* TripeazeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripeazeUITests.swift; sourceTree = "<group>"; };
 		CF3CF19D27274C0100DE47BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF3CF1AA27274C8A00DE47BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF3CF1AC27274C9C00DE47BD /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		CF3CF1B12727510200DE47BD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CF3CF1B32727512400DE47BD /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 		CF3CF1A927274C7300DE47BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CF3CF1AA27274C8A00DE47BD /* User.swift */,
 				CF3CF1AC27274C9C00DE47BD /* Destination.swift */,
 			);
 			path = Models;
@@ -525,7 +522,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF3CF1AB27274C8A00DE47BD /* User.swift in Sources */,
 				CF3CF1BC272752E900DE47BD /* DestinationsVC.swift in Sources */,
 				CF3CF1CD2727971A00DE47BD /* FirebaseAuthManager.swift in Sources */,
 				CF3CF17E27274C0000DE47BD /* ViewController.swift in Sources */,
