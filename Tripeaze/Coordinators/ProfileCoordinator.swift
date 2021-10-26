@@ -13,6 +13,7 @@ class ProfileCoordinator: NSObject, Coordinator {
     //MARK: Properties
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
+    weak var parentCoordinator: MainCoordinator?
     
     //MARK: Init
     init(navigationController: UINavigationController) {
@@ -21,7 +22,6 @@ class ProfileCoordinator: NSObject, Coordinator {
     
     // MARK: Methods
     func start() {
-        navigationController.delegate = self
         let profileController = ProfileController()
         profileController.coordinator = self
         profileController.tabBarItem = UITabBarItem(title: "Profile",
@@ -32,26 +32,8 @@ class ProfileCoordinator: NSObject, Coordinator {
     
     func signOut() {
         FirebaseAuthManager().signOut()
-    }
-    
-    func childDidFinish(_ child: Coordinator?) {
-        for (index, coordinator) in childCoordinators.enumerated() {
-            if coordinator === child {
-                childCoordinators.remove(at: index)
-                break
-            }
-        }
+        parentCoordinator?.signOut()
     }
 }
 
-extension ProfileCoordinator: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else { return }
-        if navigationController.viewControllers.contains(fromViewController) {
-            return
-        }
-        if let destinationsController = fromViewController as? DestinationsController {
-            childDidFinish(destinationsController.coordinator )
-        }
-    }
-}
+

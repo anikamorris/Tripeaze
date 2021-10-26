@@ -48,7 +48,7 @@ class SignUpController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(signUpButton)
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
@@ -71,18 +71,19 @@ class SignUpController: UIViewController {
     
     @objc func didTapSignUpButton() {
         let signUpManager = FirebaseAuthManager()
+        let alertController = UIAlertController(title: nil, message: "", preferredStyle: .alert)
         if let email = emailTextField.text, let password = passwordTextField.text {
             signUpManager.createUser(email: email, password: password) {[weak self] (success) in
                 guard let `self` = self else { return }
-                var message: String = ""
                 if (success) {
-                    message = "User was sucessfully created."
-                    self.navigationController?.pushViewController(MainTabBarController(), animated: true)
+                    alertController.message = "User was sucessfully created."
+                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+                        self.coordinator?.goToHome()
+                    }))
                 } else {
-                    message = "There was an error."
+                    alertController.message = "There was an error signing up. Please try again."
+                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 }
-                let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 self.display(alertController: alertController)
             }
         }

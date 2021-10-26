@@ -38,6 +38,7 @@ class LandingController: UIViewController {
     
     //MARK: Methods
     private func setUpViews() {
+        view.backgroundColor = .backgroundColor
         view.addSubview(loginButton)
         view.addSubview(signUpButton)
         NSLayoutConstraint.activate([

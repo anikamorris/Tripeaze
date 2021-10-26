@@ -47,7 +47,7 @@ class LoginController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
@@ -70,17 +70,19 @@ class LoginController: UIViewController {
     
     @objc func didTapLoginButton() {
         let loginManager = FirebaseAuthManager()
+        let alertController = UIAlertController(title: nil, message: "", preferredStyle: .alert)
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         loginManager.signIn(email: email, pass: password) {[weak self] (success) in
             guard let `self` = self else { return }
-            var message: String = ""
             if (success) {
-                message = "User was sucessfully logged in."
+                alertController.message = "User was sucessfully logged in."
+                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+                    self.coordinator?.goToHome()
+                }))
             } else {
-                message = "There was an error."
+                alertController.message = "There was an error logging in. Please try again."
+                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             }
-            let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.display(alertController: alertController)
         }
     }
