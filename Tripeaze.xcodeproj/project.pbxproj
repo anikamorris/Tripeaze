@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D67951CAFEA7D2B74547C78 /* Pods_TripeazeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6D4D1C8E9E761C330A8BB2 /* Pods_TripeazeTests.framework */; };
+		20AD1C728AB3BEB9C54780D4 /* Pods_Tripeaze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101633ABFBF500CB59DAC792 /* Pods_Tripeaze.framework */; };
 		CF3CF17A27274C0000DE47BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17927274C0000DE47BD /* AppDelegate.swift */; };
 		CF3CF17C27274C0000DE47BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */; };
 		CF3CF17E27274C0000DE47BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17D27274C0000DE47BD /* ViewController.swift */; };
@@ -26,6 +28,10 @@
 		CF3CF1C227276C4700DE47BD /* DestinationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1C127276C4700DE47BD /* DestinationCoordinator.swift */; };
 		CF3CF1C42727718200DE47BD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1C32727718200DE47BD /* MainTabBarController.swift */; };
 		CF3CF1C6272774D900DE47BD /* NewDestinationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1C5272774D900DE47BD /* NewDestinationVC.swift */; };
+		CF3CF1C82727927A00DE47BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */; };
+		CF3CF1C92727927A00DE47BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */; };
+		CF3CF1CA2727927A00DE47BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */; };
+		D244997E6BC361036330102E /* Pods_Tripeaze_TripeazeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3703AE85E23ED1EFFB5BC006 /* Pods_Tripeaze_TripeazeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		101633ABFBF500CB59DAC792 /* Pods_Tripeaze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tripeaze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3703AE85E23ED1EFFB5BC006 /* Pods_Tripeaze_TripeazeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tripeaze_TripeazeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A6D4D1C8E9E761C330A8BB2 /* Pods_TripeazeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripeazeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		744A62F91389B4D3F513657E /* Pods-TripeazeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripeazeTests.release.xcconfig"; path = "Target Support Files/Pods-TripeazeTests/Pods-TripeazeTests.release.xcconfig"; sourceTree = "<group>"; };
+		B2BE39A0A230359FD30FF44C /* Pods-Tripeaze-TripeazeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripeaze-TripeazeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tripeaze-TripeazeUITests/Pods-Tripeaze-TripeazeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF3CF17627274C0000DE47BD /* Tripeaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tripeaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3CF17927274C0000DE47BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +82,11 @@
 		CF3CF1C127276C4700DE47BD /* DestinationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCoordinator.swift; sourceTree = "<group>"; };
 		CF3CF1C32727718200DE47BD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CF3CF1C5272774D900DE47BD /* NewDestinationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDestinationVC.swift; sourceTree = "<group>"; };
+		CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E588BE6EA1427B9201CB6F01 /* Pods-TripeazeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripeazeTests.debug.xcconfig"; path = "Target Support Files/Pods-TripeazeTests/Pods-TripeazeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8A525EC18B3DBBCAE5D1206 /* Pods-Tripeaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripeaze.release.xcconfig"; path = "Target Support Files/Pods-Tripeaze/Pods-Tripeaze.release.xcconfig"; sourceTree = "<group>"; };
+		EAA7D0B0BA91F208144CFCB3 /* Pods-Tripeaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripeaze.debug.xcconfig"; path = "Target Support Files/Pods-Tripeaze/Pods-Tripeaze.debug.xcconfig"; sourceTree = "<group>"; };
+		F34544481A651A30A66C1421 /* Pods-Tripeaze-TripeazeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripeaze-TripeazeUITests.release.xcconfig"; path = "Target Support Files/Pods-Tripeaze-TripeazeUITests/Pods-Tripeaze-TripeazeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AD1C728AB3BEB9C54780D4 /* Pods_Tripeaze.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D67951CAFEA7D2B74547C78 /* Pods_TripeazeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +110,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D244997E6BC361036330102E /* Pods_Tripeaze_TripeazeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98895E36DEB890F868227A5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EAA7D0B0BA91F208144CFCB3 /* Pods-Tripeaze.debug.xcconfig */,
+				E8A525EC18B3DBBCAE5D1206 /* Pods-Tripeaze.release.xcconfig */,
+				B2BE39A0A230359FD30FF44C /* Pods-Tripeaze-TripeazeUITests.debug.xcconfig */,
+				F34544481A651A30A66C1421 /* Pods-Tripeaze-TripeazeUITests.release.xcconfig */,
+				E588BE6EA1427B9201CB6F01 /* Pods-TripeazeTests.debug.xcconfig */,
+				744A62F91389B4D3F513657E /* Pods-TripeazeTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CF3CF16D27274C0000DE47BD = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +138,8 @@
 				CF3CF18F27274C0100DE47BD /* TripeazeTests */,
 				CF3CF19A27274C0100DE47BD /* TripeazeUITests */,
 				CF3CF17727274C0000DE47BD /* Products */,
+				98895E36DEB890F868227A5E /* Pods */,
+				E35190433126A9F7BB9259E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +166,7 @@
 				CF3CF17D27274C0000DE47BD /* ViewController.swift */,
 				CF3CF18227274C0100DE47BD /* Assets.xcassets */,
 				CF3CF18427274C0100DE47BD /* LaunchScreen.storyboard */,
+				CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */,
 				CF3CF18727274C0100DE47BD /* Info.plist */,
 			);
 			path = Tripeaze;
@@ -209,6 +245,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E35190433126A9F7BB9259E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				101633ABFBF500CB59DAC792 /* Pods_Tripeaze.framework */,
+				3703AE85E23ED1EFFB5BC006 /* Pods_Tripeaze_TripeazeUITests.framework */,
+				5A6D4D1C8E9E761C330A8BB2 /* Pods_TripeazeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF3CF1A027274C0100DE47BD /* Build configuration list for PBXNativeTarget "Tripeaze" */;
 			buildPhases = (
+				50883FFFACBFA8E60A1CDA22 /* [CP] Check Pods Manifest.lock */,
 				CF3CF17227274C0000DE47BD /* Sources */,
 				CF3CF17327274C0000DE47BD /* Frameworks */,
 				CF3CF17427274C0000DE47BD /* Resources */,
+				565C8FBEDE0DFACA7A7ADFD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +281,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF3CF1A327274C0100DE47BD /* Build configuration list for PBXNativeTarget "TripeazeTests" */;
 			buildPhases = (
+				152A702F587CA27E35404F17 /* [CP] Check Pods Manifest.lock */,
 				CF3CF18827274C0100DE47BD /* Sources */,
 				CF3CF18927274C0100DE47BD /* Frameworks */,
 				CF3CF18A27274C0100DE47BD /* Resources */,
@@ -251,9 +300,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF3CF1A627274C0100DE47BD /* Build configuration list for PBXNativeTarget "TripeazeUITests" */;
 			buildPhases = (
+				BAA1FDE42A05651C15F0FF90 /* [CP] Check Pods Manifest.lock */,
 				CF3CF19327274C0100DE47BD /* Sources */,
 				CF3CF19427274C0100DE47BD /* Frameworks */,
 				CF3CF19527274C0100DE47BD /* Resources */,
+				A0580A8CCF45C2B6FB15006A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +365,7 @@
 			files = (
 				CF3CF18627274C0100DE47BD /* LaunchScreen.storyboard in Resources */,
 				CF3CF18327274C0100DE47BD /* Assets.xcassets in Resources */,
+				CF3CF1C82727927A00DE47BD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3CF1C92727927A00DE47BD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,10 +381,114 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3CF1CA2727927A00DE47BD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		152A702F587CA27E35404F17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripeazeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50883FFFACBFA8E60A1CDA22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tripeaze-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		565C8FBEDE0DFACA7A7ADFD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tripeaze/Pods-Tripeaze-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tripeaze/Pods-Tripeaze-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tripeaze/Pods-Tripeaze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0580A8CCF45C2B6FB15006A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tripeaze-TripeazeUITests/Pods-Tripeaze-TripeazeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tripeaze-TripeazeUITests/Pods-Tripeaze-TripeazeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tripeaze-TripeazeUITests/Pods-Tripeaze-TripeazeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAA1FDE42A05651C15F0FF90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tripeaze-TripeazeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF3CF17227274C0000DE47BD /* Sources */ = {
@@ -517,6 +674,7 @@
 		};
 		CF3CF1A127274C0100DE47BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAA7D0B0BA91F208144CFCB3 /* Pods-Tripeaze.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -536,6 +694,7 @@
 		};
 		CF3CF1A227274C0100DE47BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8A525EC18B3DBBCAE5D1206 /* Pods-Tripeaze.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -555,6 +714,7 @@
 		};
 		CF3CF1A427274C0100DE47BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E588BE6EA1427B9201CB6F01 /* Pods-TripeazeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -577,6 +737,7 @@
 		};
 		CF3CF1A527274C0100DE47BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 744A62F91389B4D3F513657E /* Pods-TripeazeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -599,6 +760,7 @@
 		};
 		CF3CF1A727274C0100DE47BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2BE39A0A230359FD30FF44C /* Pods-Tripeaze-TripeazeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -619,6 +781,7 @@
 		};
 		CF3CF1A827274C0100DE47BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F34544481A651A30A66C1421 /* Pods-Tripeaze-TripeazeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
