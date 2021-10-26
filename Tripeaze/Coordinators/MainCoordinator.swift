@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class MainCoordinator: NSObject, Coordinator {
     
@@ -24,9 +25,11 @@ class MainCoordinator: NSObject, Coordinator {
     
     //MARK: Methods
     func start() {
-        let landingController = LandingController()
-        landingController.coordinator = self
-        navigationController.pushViewController(landingController, animated: false)
+        if Auth.auth().currentUser != nil {
+            navigationController.pushViewController(mainTabBarController(), animated: false)
+        } else {
+            goToLandingController()
+        }
     }
     
     func goToLogin() {
@@ -42,18 +45,29 @@ class MainCoordinator: NSObject, Coordinator {
     }
     
     func goToHome() {
-        let mainTabBarController = MainTabBarController()
-        mainTabBarController.coordinator = self
-        navigationController.setNavigationBarHidden(true, animated: false)
-        navigationController.pushViewController(mainTabBarController, animated: true)
+        navigationController.pushViewController(mainTabBarController(), animated: true)
     }
     
     func signOut() {
         childCoordinators = []
-        navigationController.popToRootViewController(animated: false)
+        navigationController.viewControllers = []
+        goToLandingController()
     }
     
-    func childDidFinish(_ child: Coordinator?) {
+    //MARK: Private
+    private func goToLandingController() {
+        let landingController = LandingController()
+        landingController.coordinator = self
+        navigationController.pushViewController(landingController, animated: false)
+    }
+    private func mainTabBarController() -> MainTabBarController {
+        let mainTabBarController = MainTabBarController()
+        mainTabBarController.coordinator = self
+        navigationController.setNavigationBarHidden(true, animated: false)
+        return mainTabBarController
+    }
+    
+    private func childDidFinish(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
                 childCoordinators.remove(at: index)
