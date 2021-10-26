@@ -101,29 +101,18 @@ class FirebaseAuthManager {
         }
     }
     
-    func createGroup(completion: @escaping (_ groupID: String?) -> Void) {
-//        var Timestamp: TimeInterval {
-//            return NSDate().timeIntervalSince1970 * -1000
-//        }
-//        let groupRef = ref.child("users").child(getCurrentUser()!.uid).child("groups").childByAutoId()
-//        let nodeRef = groupRef.childByAppendingPath("timestamp")
-//        groupRef.setValue(["timestamp": Timestamp])
-//        groupRef.queryOrdered(byChild: "timestamp").queryLimited(toFirst: 1).observe(.childAdded, with: { snapshot in
-//            print("The key: \(snapshot.key)") //the key
-//        })
-//        ref.child("users/\(getCurrentUser()!.uid)/groups").getData { error, snapshot in
-//            guard error == nil else {
-//                print(error!.localizedDescription)
-//                return
-//            }
-//            let ids = snapshot.value as? [String: Any]
-//            guard let ids = ids else { return }
-////            let groupID = ids[ids.count - 1].key
-////            completion(groupID)
-//        }
+    func createGroup() -> String? {
+        let groupRef = ref.child("groups").childByAutoId()
+        let key = groupRef.key
+        guard let groupKey = key else { return nil }
+        groupRef.setValue(["autoId": groupKey])
+        groupRef.child("members").childByAutoId().setValue(getCurrentUser()!.uid)
+        return groupKey
     }
     
-    func joinGroup(groupID: String) {
-        
+    func addFriendToGroup(friendID: String, groupID: String) {
+        ref.child("groups").child(groupID).child("members").childByAutoId().setValue(friendID)
     }
+    
+    
 }
