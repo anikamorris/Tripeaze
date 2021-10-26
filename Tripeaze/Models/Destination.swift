@@ -11,7 +11,7 @@ class Destination {
     let name: String
     var numVotes: Int = 0
     
-    init(name: String) {
+    init(_ name: String, _ numVotes: Int = 0) {
         self.name = name
     }
 }

@@ -56,8 +56,10 @@ class NewDestinationController: UIViewController {
     
     @objc func saveButtonTapped() {
         guard let name = nameTextField.text else { return }
+        let destinationManager = FirebaseDestinationManager()
         if !name.isEmpty {
-            let destination = Destination(name: name)
+            let destination = Destination(name)
+            destinationManager.createDestination(destination: destination)
             coordinator?.saveDestination(destination)
         }
     }

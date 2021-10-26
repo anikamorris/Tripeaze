@@ -17,13 +17,12 @@ class FirebaseAuthManager {
     var ref: DatabaseReference! = Database.database().reference()
     
     //MARK: Methods
-    func createUser(email: String, password: String, completionBlock: @escaping (_ success: User?) -> Void) {
-        
+    func createUser(email: String, password: String, completion: @escaping (_ user: User?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let user = authResult?.user {
-                completionBlock(user)
+                completion(user)
             } else {
-                completionBlock(nil)
+                completion(nil)
             }
         }
     }
@@ -33,6 +32,28 @@ class FirebaseAuthManager {
         dataDictionary["name"] = name
         dataDictionary["username"] = username
         ref.child("users").child(user.uid).setValue(dataDictionary)
+    }
+    
+    func getName(completion: @escaping (_ name: String?) -> Void) {
+        ref.child("users/\(getCurrentUser()!.uid)/name").getData { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+            return;
+            }
+            let name = snapshot.value as? String ?? "Unknown";
+            completion(name)
+        }
+    }
+    
+    func getUsername(completion: @escaping (_ username: String) -> Void) {
+        ref.child("users/\(getCurrentUser()!.uid)/username").getData { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+            return;
+            }
+            let username = snapshot.value as? String ?? "Unknown";
+            completion(username)
+        }
     }
     
     func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {

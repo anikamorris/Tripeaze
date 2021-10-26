@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9B0A1F60EF601A8D850EC65A /* Pods_Tripeaze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5AFF6021828C226A77CB4B /* Pods_Tripeaze.framework */; };
 		B1637D807C5C349464F7388F /* Pods_Tripeaze_TripeazeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2310243DF51E8CAF00F99E03 /* Pods_Tripeaze_TripeazeUITests.framework */; };
+		CF34C8AA27286DF500FCCFA3 /* FirebaseDestinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF34C8A927286DF500FCCFA3 /* FirebaseDestinationManager.swift */; };
 		CF3CF17A27274C0000DE47BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17927274C0000DE47BD /* AppDelegate.swift */; };
 		CF3CF17C27274C0000DE47BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */; };
 		CF3CF17E27274C0000DE47BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17D27274C0000DE47BD /* ViewController.swift */; };
@@ -64,6 +65,7 @@
 		9A69DD98D11F57C6396E6EE2 /* Pods-TripeazeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripeazeTests.release.xcconfig"; path = "Target Support Files/Pods-TripeazeTests/Pods-TripeazeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D5AFF6021828C226A77CB4B /* Pods_Tripeaze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tripeaze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8DC0A4D7F7CF553EE9E13A /* Pods-Tripeaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripeaze.release.xcconfig"; path = "Target Support Files/Pods-Tripeaze/Pods-Tripeaze.release.xcconfig"; sourceTree = "<group>"; };
+		CF34C8A927286DF500FCCFA3 /* FirebaseDestinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDestinationManager.swift; sourceTree = "<group>"; };
 		CF3CF17627274C0000DE47BD /* Tripeaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tripeaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3CF17927274C0000DE47BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				CF3CF1CC2727971A00DE47BD /* FirebaseAuthManager.swift */,
+				CF34C8A927286DF500FCCFA3 /* FirebaseDestinationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				CF3CF1C42727718200DE47BD /* MainTabBarController.swift in Sources */,
 				CF3CF1B22727510200DE47BD /* Coordinator.swift in Sources */,
 				CF3CF1BA272752BF00DE47BD /* ProfileVC.swift in Sources */,
+				CF34C8AA27286DF500FCCFA3 /* FirebaseDestinationManager.swift in Sources */,
 				CF3CF1C6272774D900DE47BD /* NewDestinationVC.swift in Sources */,
 				CF3CF1B42727512400DE47BD /* ProfileCoordinator.swift in Sources */,
 				CF3CF1C227276C4700DE47BD /* DestinationCoordinator.swift in Sources */,

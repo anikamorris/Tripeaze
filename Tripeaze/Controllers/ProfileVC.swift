@@ -31,9 +31,12 @@ class ProfileController: UIViewController {
         setUpViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setNameLabel()
+    }
+    
     //MARK: Methods
     private func setUpViews() {
-//        profileStackView.nameLabel.text = user.displayName!
         profileStackView.usernameLabel.text = user.email!
         view.backgroundColor = .backgroundColor
         view.addSubview(profileStackView)
@@ -49,6 +52,14 @@ class ProfileController: UIViewController {
             signOutButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
             signOutButton.topAnchor.constraint(equalTo: profileStackView.bottomAnchor, constant: 40)
         ])
+    }
+    
+    private func setNameLabel() {
+        let authManager = FirebaseAuthManager()
+        authManager.getUsername { [weak self] name in
+            guard let `self` = self else { return }
+            self.profileStackView.nameLabel.text = name
+        }
     }
     
     @objc func signOutTapped() {

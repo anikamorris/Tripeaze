@@ -7,12 +7,13 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 class DestinationsController: UIViewController {
     
     //MARK: Properties
     weak var coordinator: DestinationCoordinator?
-    var destinations: [Destination] = [Destination(name: "Italy")]
+    var destinations: [Destination] = []
     
     //MARK: Views
     let tableView: UITableView = {
@@ -31,7 +32,10 @@ class DestinationsController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        FirebaseDestinationManager().getDestinations { [weak self] destinations in
+            self?.destinations = destinations
+            self?.tableView.reloadData()
+        }
     }
     
     //MARK: Methods

@@ -98,7 +98,8 @@ class SignUpController: UIViewController {
         let alertController = UIAlertController(title: nil, message: "", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         if let name = nameTextField.text, let username = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text {
-            if name.isEmpty || username.isEmpty {
+            if name.trimmingCharacters(in: .whitespaces).isEmpty ||
+                username.trimmingCharacters(in: .whitespaces).isEmpty {
                 alertController.message = "Please fill out all fields."
                 self.display(alertController: alertController)
             } else {
