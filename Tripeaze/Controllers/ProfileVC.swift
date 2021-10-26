@@ -7,11 +7,13 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class ProfileController: UIViewController {
     
     //MARK: Properties
     weak var coordinator: ProfileCoordinator?
+    let user: FirebaseAuth.User = FirebaseAuthManager().getCurrentUser()!
     
     //MARK: Views
     let profileStackView = ProfileStackView()
@@ -31,6 +33,8 @@ class ProfileController: UIViewController {
     
     //MARK: Methods
     private func setUpViews() {
+//        profileStackView.nameLabel.text = user.displayName!
+        profileStackView.usernameLabel.text = user.email!
         view.backgroundColor = .backgroundColor
         view.addSubview(profileStackView)
         view.addSubview(signOutButton)

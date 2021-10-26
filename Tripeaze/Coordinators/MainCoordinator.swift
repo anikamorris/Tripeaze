@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
 
 class MainCoordinator: NSObject, Coordinator {
     
@@ -25,7 +24,7 @@ class MainCoordinator: NSObject, Coordinator {
     
     //MARK: Methods
     func start() {
-        if Auth.auth().currentUser != nil {
+        if FirebaseAuthManager().getCurrentUser() != nil {
             navigationController.pushViewController(mainTabBarController(), animated: false)
         } else {
             goToLandingController()
@@ -51,6 +50,7 @@ class MainCoordinator: NSObject, Coordinator {
     func signOut() {
         childCoordinators = []
         navigationController.viewControllers = []
+        navigationController.setNavigationBarHidden(false, animated: false)
         goToLandingController()
     }
     

@@ -38,4 +38,8 @@ class FirebaseAuthManager {
             print("Error signing out: %@", signOutError)
         }
     }
+    
+    func getCurrentUser() -> FirebaseAuth.User? {
+        return Auth.auth().currentUser
+    }
 }
