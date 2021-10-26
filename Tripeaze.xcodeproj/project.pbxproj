@@ -12,7 +12,6 @@
 		CF34C8AA27286DF500FCCFA3 /* FirebaseDestinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF34C8A927286DF500FCCFA3 /* FirebaseDestinationManager.swift */; };
 		CF3CF17A27274C0000DE47BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17927274C0000DE47BD /* AppDelegate.swift */; };
 		CF3CF17C27274C0000DE47BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */; };
-		CF3CF17E27274C0000DE47BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF17D27274C0000DE47BD /* ViewController.swift */; };
 		CF3CF18327274C0100DE47BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF18227274C0100DE47BD /* Assets.xcassets */; };
 		CF3CF18627274C0100DE47BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF18427274C0100DE47BD /* LaunchScreen.storyboard */; };
 		CF3CF19127274C0100DE47BD /* TripeazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF19027274C0100DE47BD /* TripeazeTests.swift */; };
@@ -69,7 +68,6 @@
 		CF3CF17627274C0000DE47BD /* Tripeaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tripeaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3CF17927274C0000DE47BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF3CF17D27274C0000DE47BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF3CF18227274C0100DE47BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF3CF18527274C0100DE47BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF3CF18727274C0100DE47BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 				CF3CF1A927274C7300DE47BD /* Models */,
 				CF3CF17927274C0000DE47BD /* AppDelegate.swift */,
 				CF3CF17B27274C0000DE47BD /* SceneDelegate.swift */,
-				CF3CF17D27274C0000DE47BD /* ViewController.swift */,
 				CF3CF18227274C0100DE47BD /* Assets.xcassets */,
 				CF3CF18427274C0100DE47BD /* LaunchScreen.storyboard */,
 				CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */,
@@ -527,7 +524,6 @@
 			files = (
 				CF3CF1BC272752E900DE47BD /* DestinationsVC.swift in Sources */,
 				CF3CF1CD2727971A00DE47BD /* FirebaseAuthManager.swift in Sources */,
-				CF3CF17E27274C0000DE47BD /* ViewController.swift in Sources */,
 				CF3CF1C42727718200DE47BD /* MainTabBarController.swift in Sources */,
 				CF3CF1B22727510200DE47BD /* Coordinator.swift in Sources */,
 				CF3CF1BA272752BF00DE47BD /* ProfileVC.swift in Sources */,
@@ -723,6 +719,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.anikamorris.Tripeaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

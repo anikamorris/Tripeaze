@@ -110,7 +110,7 @@ class SignUpController: UIViewController {
                         self.display(alertController: alertController)
                         return
                     }
-                    signUpManager.setNameAndUsername(for: user, name: name, username: username)
+                    signUpManager.setNameAndUsername(for: user, name: name, username: username.lowercased())
                     self.coordinator?.goToHome()
                 }
             }

@@ -38,7 +38,7 @@ class FirebaseAuthManager {
         ref.child("users/\(getCurrentUser()!.uid)/name").getData { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
-            return;
+                return
             }
             let name = snapshot.value as? String ?? "Unknown";
             completion(name)
@@ -49,7 +49,7 @@ class FirebaseAuthManager {
         ref.child("users/\(getCurrentUser()!.uid)/username").getData { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
-            return;
+                return
             }
             let username = snapshot.value as? String ?? "Unknown";
             completion(username)
@@ -58,7 +58,7 @@ class FirebaseAuthManager {
     
     func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
-            if let error = error, let _ = AuthErrorCode(rawValue: error._code) {
+            if let resultError = error, let _ = AuthErrorCode(rawValue: resultError._code) {
                 completionBlock(false)
             } else {
                 completionBlock(true)
@@ -76,5 +76,54 @@ class FirebaseAuthManager {
     
     func getCurrentUser() -> FirebaseAuth.User? {
         return Auth.auth().currentUser
+    }
+    
+    func findUserID(from username: String, completion: @escaping (_ id: String?) -> Void) {
+        ref.child("users").queryOrdered(byChild: "username").queryStarting(atValue: username).queryEnding(atValue: username+"\u{f8ff}").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [String: Any] else {
+                completion(nil)
+                return
+            }
+            let id = value.keys.first
+            completion(id)
+        })
+    }
+    
+    func addFriend(username: String, completion: @escaping (_ success: Bool) -> Void) {
+        findUserID(from: username) { [weak self] uid in
+            guard let `self` = self else { return }
+            guard let uid = uid else {
+                completion(false)
+                return
+            }
+            self.ref.child("users").child(self.getCurrentUser()!.uid).child("friends").childByAutoId().setValue(uid)
+            completion(true)
+        }
+    }
+    
+    func createGroup(completion: @escaping (_ groupID: String?) -> Void) {
+//        var Timestamp: TimeInterval {
+//            return NSDate().timeIntervalSince1970 * -1000
+//        }
+//        let groupRef = ref.child("users").child(getCurrentUser()!.uid).child("groups").childByAutoId()
+//        let nodeRef = groupRef.childByAppendingPath("timestamp")
+//        groupRef.setValue(["timestamp": Timestamp])
+//        groupRef.queryOrdered(byChild: "timestamp").queryLimited(toFirst: 1).observe(.childAdded, with: { snapshot in
+//            print("The key: \(snapshot.key)") //the key
+//        })
+//        ref.child("users/\(getCurrentUser()!.uid)/groups").getData { error, snapshot in
+//            guard error == nil else {
+//                print(error!.localizedDescription)
+//                return
+//            }
+//            let ids = snapshot.value as? [String: Any]
+//            guard let ids = ids else { return }
+////            let groupID = ids[ids.count - 1].key
+////            completion(groupID)
+//        }
+    }
+    
+    func joinGroup(groupID: String) {
+        
     }
 }
