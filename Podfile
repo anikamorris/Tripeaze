@@ -7,6 +7,8 @@ target 'Tripeaze' do
 
   # Pods for Tripeaze
   pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
   target 'TripeazeTests' do
     inherit! :search_paths
