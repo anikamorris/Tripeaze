@@ -13,6 +13,7 @@ class MainTabBarController: UITabBarController {
     weak var coordinator: MainCoordinator?
     let profileCoordinator = ProfileCoordinator(navigationController: UINavigationController())
     let destinationCoordinator = DestinationCoordinator(navigationController: UINavigationController())
+    let groupCoordinator = GroupCoordinator(navigationController: UINavigationController())
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -20,12 +21,15 @@ class MainTabBarController: UITabBarController {
         
         coordinator?.childCoordinators.append(profileCoordinator)
         coordinator?.childCoordinators.append(destinationCoordinator)
+        coordinator?.childCoordinators.append(groupCoordinator)
         
         profileCoordinator.start()
         destinationCoordinator.start()
+        groupCoordinator.start()
         
         viewControllers = [destinationCoordinator.navigationController,
-                           profileCoordinator.navigationController
+                           profileCoordinator.navigationController,
+                           groupCoordinator.navigationController
         ]
     }
     

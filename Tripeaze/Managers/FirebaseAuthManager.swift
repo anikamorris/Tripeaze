@@ -29,13 +29,13 @@ class FirebaseAuthManager {
     
     func setNameAndUsername(for user: User, name: String, username: String) {
         var dataDictionary: [String: Any] = [:]
-        dataDictionary["name"] = name
-        dataDictionary["username"] = username
-        ref.child("users").child(user.uid).setValue(dataDictionary)
+        dataDictionary[Constants.FirebaseKeys.name] = name
+        dataDictionary[Constants.FirebaseKeys.username] = username
+        ref.child(Constants.FirebaseKeys.users).child(user.uid).setValue(dataDictionary)
     }
     
     func getName(completion: @escaping (_ name: String?) -> Void) {
-        ref.child("users/\(getCurrentUser()!.uid)/name").getData { error, snapshot in
+        ref.child("\(Constants.FirebaseKeys.users)/\(getCurrentUser()!.uid)/\(Constants.FirebaseKeys.name)").getData { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
@@ -46,7 +46,7 @@ class FirebaseAuthManager {
     }
     
     func getUsername(completion: @escaping (_ username: String) -> Void) {
-        ref.child("users/\(getCurrentUser()!.uid)/username").getData { error, snapshot in
+        ref.child("\(Constants.FirebaseKeys.users)/\(getCurrentUser()!.uid)/\(Constants.FirebaseKeys.username)").getData { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
@@ -78,8 +78,17 @@ class FirebaseAuthManager {
         return Auth.auth().currentUser
     }
     
+    func createGroup() -> String? {
+        let groupRef = ref.child(Constants.FirebaseKeys.users).child(self.getCurrentUser()!.uid).child(Constants.FirebaseKeys.myGroups).childByAutoId()
+        let key = groupRef.key
+        guard let groupKey = key else { return nil }
+        groupRef.setValue([Constants.FirebaseKeys.autoID: groupKey])
+        groupRef.child(Constants.FirebaseKeys.members).childByAutoId().setValue(getCurrentUser()!.uid)
+        return groupKey
+    }
+    
     func findUserID(from username: String, completion: @escaping (_ id: String?) -> Void) {
-        ref.child("users").queryOrdered(byChild: "username").queryStarting(atValue: username).queryEnding(atValue: username+"\u{f8ff}").observe(.value, with: { snapshot in
+        ref.child(Constants.FirebaseKeys.users).queryOrdered(byChild: Constants.FirebaseKeys.username).queryStarting(atValue: username).queryEnding(atValue: username+"\u{f8ff}").observe(.value, with: { snapshot in
             guard let value = snapshot.value as? [String: Any] else {
                 completion(nil)
                 return
@@ -89,30 +98,45 @@ class FirebaseAuthManager {
         })
     }
     
-    func addFriend(username: String, completion: @escaping (_ success: Bool) -> Void) {
+    func addFriendToGroup(username: String, groupID: String, completion: @escaping (_ success: Bool) -> Void) {
         findUserID(from: username) { [weak self] uid in
-            guard let `self` = self else { return }
-            guard let uid = uid else {
+            guard let `self` = self, let uid = uid else {
                 completion(false)
                 return
             }
-            self.ref.child("users").child(self.getCurrentUser()!.uid).child("friends").childByAutoId().setValue(uid)
+            // Add friend to current user's group
+            self.ref.child(Constants.FirebaseKeys.users).child(self.getCurrentUser()!.uid).child(Constants.FirebaseKeys.myGroups).child(groupID).child(Constants.FirebaseKeys.members).childByAutoId().setValue(uid)
+            // Add group to friend's list of groups
+            self.ref.child(Constants.FirebaseKeys.users).child(uid).child(Constants.FirebaseKeys.groups).child(groupID).setValue([Constants.FirebaseKeys.creator: self.getCurrentUser()!.uid])
             completion(true)
         }
     }
     
-    func createGroup() -> String? {
-        let groupRef = ref.child("groups").childByAutoId()
-        let key = groupRef.key
-        guard let groupKey = key else { return nil }
-        groupRef.setValue(["autoId": groupKey])
-        groupRef.child("members").childByAutoId().setValue(getCurrentUser()!.uid)
-        return groupKey
+    func getGroups(completion: @escaping (_ groups: [Group]) -> Void) {
+        var groups = [Group]()
+        ref.child(Constants.FirebaseKeys.users).child(self.getCurrentUser()!.uid).child(Constants.FirebaseKeys.myGroups).observe(.value) { [weak self] snapshot in
+            guard let snapshotValue = snapshot.value as? [String: Any] else {
+                print("couldn't cast value to [string: any]")
+                return
+            }
+            for (_, value) in snapshotValue {
+                guard let group = value as? [String: Any] else { return }
+                guard let autoID = group[Constants.FirebaseKeys.autoID] as? String else {
+                    print("couldn't cast autoID to string")
+                    return
+                }
+                guard let members = group[Constants.FirebaseKeys.members] as? [String: Any] else {
+                    print("couldn't cast members to [string: any]")
+                    return
+                }
+                var memberIDs = [String]()
+                for (_, id) in members {
+                    memberIDs.append("\(id)")
+                }
+                let newGroup = Group(groupID: autoID, creator: (self?.getCurrentUser()!.uid)!, members: memberIDs)
+                groups.append(newGroup)
+            }
+            completion(groups)
+        }
     }
-    
-    func addFriendToGroup(friendID: String, groupID: String) {
-        ref.child("groups").child(groupID).child("members").childByAutoId().setValue(friendID)
-    }
-    
-    
 }

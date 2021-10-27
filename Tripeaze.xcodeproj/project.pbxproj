@@ -32,6 +32,11 @@
 		CF3CF1CA2727927A00DE47BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */; };
 		CF3CF1CD2727971A00DE47BD /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1CC2727971A00DE47BD /* FirebaseAuthManager.swift */; };
 		CF3CF1CF272797AA00DE47BD /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3CF1CE272797AA00DE47BD /* SignUpVC.swift */; };
+		CF4EC6072729A1AE00665AC3 /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC6062729A1AE00665AC3 /* GroupVC.swift */; };
+		CF4EC6092729A21400665AC3 /* GroupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC6082729A21400665AC3 /* GroupCoordinator.swift */; };
+		CF4EC60B2729B6DA00665AC3 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC60A2729B6DA00665AC3 /* Group.swift */; };
+		CF4EC60E2729BD9400665AC3 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC60D2729BD9400665AC3 /* GroupCell.swift */; };
+		CF4EC6112729DDDE00665AC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC6102729DDDE00665AC3 /* Constants.swift */; };
 		CFA49EB52727AE0F00A2294D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA49EB42727AE0F00A2294D /* LoginVC.swift */; };
 		CFA49EB72727B3FC00A2294D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA49EB62727B3FC00A2294D /* MainCoordinator.swift */; };
 		CFA49EBA2727B4BE00A2294D /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA49EB92727B4BE00A2294D /* LandingVC.swift */; };
@@ -91,6 +96,11 @@
 		CF3CF1C72727927A00DE47BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF3CF1CC2727971A00DE47BD /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		CF3CF1CE272797AA00DE47BD /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		CF4EC6062729A1AE00665AC3 /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
+		CF4EC6082729A21400665AC3 /* GroupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCoordinator.swift; sourceTree = "<group>"; };
+		CF4EC60A2729B6DA00665AC3 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		CF4EC60D2729BD9400665AC3 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		CF4EC6102729DDDE00665AC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CFA49EB42727AE0F00A2294D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		CFA49EB62727B3FC00A2294D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CFA49EB92727B4BE00A2294D /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
@@ -211,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				CF3CF1AC27274C9C00DE47BD /* Destination.swift */,
+				CF4EC60A2729B6DA00665AC3 /* Group.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +231,7 @@
 			children = (
 				CF3CF1BD2727571700DE47BD /* ProfileStackView.swift */,
 				CF3CF1BF27275DB500DE47BD /* DestinationCell.swift */,
+				CF4EC60D2729BD9400665AC3 /* GroupCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,11 +239,11 @@
 		CF3CF1AF2727503500DE47BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF4EC6052729A19C00665AC3 /* Groups */,
+				CF4EC6032729A14B00665AC3 /* Profile */,
+				CF4EC6022729A13500665AC3 /* Destinations */,
 				CFA49EB82727B48300A2294D /* Onboarding */,
-				CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */,
-				CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */,
 				CF3CF1C32727718200DE47BD /* MainTabBarController.swift */,
-				CF3CF1C5272774D900DE47BD /* NewDestinationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +255,7 @@
 				CF3CF1B32727512400DE47BD /* ProfileCoordinator.swift */,
 				CF3CF1C127276C4700DE47BD /* DestinationCoordinator.swift */,
 				CFA49EB62727B3FC00A2294D /* MainCoordinator.swift */,
+				CF4EC6082729A21400665AC3 /* GroupCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -251,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				CF3CF1B62727519100DE47BD /* Extensions */,
+				CF4EC6102729DDDE00665AC3 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -270,6 +284,31 @@
 				CF34C8A927286DF500FCCFA3 /* FirebaseDestinationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		CF4EC6022729A13500665AC3 /* Destinations */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1C5272774D900DE47BD /* NewDestinationVC.swift */,
+				CF3CF1BB272752E900DE47BD /* DestinationsVC.swift */,
+			);
+			path = Destinations;
+			sourceTree = "<group>";
+		};
+		CF4EC6032729A14B00665AC3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CF3CF1B9272752BF00DE47BD /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CF4EC6052729A19C00665AC3 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				CF4EC6062729A1AE00665AC3 /* GroupVC.swift */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 		CFA49EB82727B48300A2294D /* Onboarding */ = {
@@ -524,13 +563,17 @@
 			files = (
 				CF3CF1BC272752E900DE47BD /* DestinationsVC.swift in Sources */,
 				CF3CF1CD2727971A00DE47BD /* FirebaseAuthManager.swift in Sources */,
+				CF4EC6072729A1AE00665AC3 /* GroupVC.swift in Sources */,
 				CF3CF1C42727718200DE47BD /* MainTabBarController.swift in Sources */,
 				CF3CF1B22727510200DE47BD /* Coordinator.swift in Sources */,
 				CF3CF1BA272752BF00DE47BD /* ProfileVC.swift in Sources */,
 				CF34C8AA27286DF500FCCFA3 /* FirebaseDestinationManager.swift in Sources */,
 				CF3CF1C6272774D900DE47BD /* NewDestinationVC.swift in Sources */,
+				CF4EC60E2729BD9400665AC3 /* GroupCell.swift in Sources */,
 				CF3CF1B42727512400DE47BD /* ProfileCoordinator.swift in Sources */,
+				CF4EC6092729A21400665AC3 /* GroupCoordinator.swift in Sources */,
 				CF3CF1C227276C4700DE47BD /* DestinationCoordinator.swift in Sources */,
+				CF4EC60B2729B6DA00665AC3 /* Group.swift in Sources */,
 				CF3CF1C027275DB500DE47BD /* DestinationCell.swift in Sources */,
 				CF3CF1AD27274C9C00DE47BD /* Destination.swift in Sources */,
 				CF3CF1B8272751A300DE47BD /* UIColor+AppColors.swift in Sources */,
@@ -541,6 +584,7 @@
 				CF3CF1BE2727571700DE47BD /* ProfileStackView.swift in Sources */,
 				CF3CF17C27274C0000DE47BD /* SceneDelegate.swift in Sources */,
 				CF3CF1CF272797AA00DE47BD /* SignUpVC.swift in Sources */,
+				CF4EC6112729DDDE00665AC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
