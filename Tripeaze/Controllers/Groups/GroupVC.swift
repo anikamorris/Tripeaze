@@ -51,8 +51,11 @@ class GroupController: UIViewController {
     override func viewDidLoad() {
         groupTableView.delegate = self
         groupTableView.dataSource = self
-        getGroups()
         setUpViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getGroups()
     }
     
     //MARK: Methods
@@ -86,21 +89,25 @@ class GroupController: UIViewController {
     }
     
     private func getGroups() {
-        authManager.getGroups() { [weak self] groups in
+        authManager.getMyGroups() { [weak self] groups in
             self?.groups = groups
+            self?.groupTableView.reloadData()
+        }
+        authManager.getJoinedGroups { [weak self] groups in
+            self?.groups.append(contentsOf: groups)
             self?.groupTableView.reloadData()
         }
     }
     
     private func display(_ alertController: UIAlertController) {
-        self.present(alertController, animated: true, completion: nil)
+        coordinator?.navigationController.present(alertController, animated: true, completion: nil)
     }
     
     @objc func findFriendTapped() {
         guard let username = friendTextField.text, !username.trimmingCharacters(in: .whitespaces).isEmpty else { return }
         let alertController = UIAlertController(title: nil, message: "", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        authManager.addFriend(username: username) { [weak self] success in
+        authManager.addFriendToGroup(username: username, groupID: groups[0].groupID) { [weak self] success in
             if success {
                 alertController.message = "\(username) has been added to this group."
             } else {
@@ -116,7 +123,7 @@ class GroupController: UIViewController {
             let alertController = UIAlertController(title: nil, message: "", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             alertController.message = "Error creating group. Please try again."
-//            display(alertController)
+            display(alertController)
             return
         }
         let group = Group(groupID: groupID, creator: authManager.getCurrentUser()!.uid)

@@ -112,21 +112,21 @@ class FirebaseAuthManager {
         }
     }
     
-    func getGroups(completion: @escaping (_ groups: [Group]) -> Void) {
+    func getMyGroups(completion: @escaping (_ groups: [Group]) -> Void) {
         var groups = [Group]()
-        ref.child(Constants.FirebaseKeys.users).child(self.getCurrentUser()!.uid).child(Constants.FirebaseKeys.myGroups).observe(.value) { [weak self] snapshot in
+        ref.child("\(Constants.FirebaseKeys.users)/\(getCurrentUser()!.uid)/\(Constants.FirebaseKeys.myGroups)").getData { [weak self] error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
             guard let snapshotValue = snapshot.value as? [String: Any] else {
                 print("couldn't cast value to [string: any]")
                 return
             }
             for (_, value) in snapshotValue {
                 guard let group = value as? [String: Any] else { return }
-                guard let autoID = group[Constants.FirebaseKeys.autoID] as? String else {
-                    print("couldn't cast autoID to string")
-                    return
-                }
-                guard let members = group[Constants.FirebaseKeys.members] as? [String: Any] else {
-                    print("couldn't cast members to [string: any]")
+                guard let autoID = group[Constants.FirebaseKeys.autoID] as? String, let members = group[Constants.FirebaseKeys.members] as? [String: Any] else {
+                    print("couldn't cast autoID to string or members to [string: any]")
                     return
                 }
                 var memberIDs = [String]()
@@ -134,6 +134,26 @@ class FirebaseAuthManager {
                     memberIDs.append("\(id)")
                 }
                 let newGroup = Group(groupID: autoID, creator: (self?.getCurrentUser()!.uid)!, members: memberIDs)
+                groups.append(newGroup)
+            }
+            completion(groups)
+        }
+    }
+    
+    func getJoinedGroups(completion: @escaping (_ groups: [Group]) -> Void) {
+        var groups = [Group]()
+        ref.child("\(Constants.FirebaseKeys.users)/\(self.getCurrentUser()!.uid)/\(Constants.FirebaseKeys.groups)").getData { [weak self] error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            guard let `self` = self, let snapshotValue = snapshot.value as? [String: Any] else {
+                print("couldn't cast value to [string: any]")
+                return
+            }
+            for (key, value) in snapshotValue {
+                guard let group = value as? [String: Any], let creator = group[Constants.FirebaseKeys.creator] as? String else { return }
+                let newGroup = Group(groupID: key, creator: creator, members: [creator, self.getCurrentUser()!.uid])
                 groups.append(newGroup)
             }
             completion(groups)
