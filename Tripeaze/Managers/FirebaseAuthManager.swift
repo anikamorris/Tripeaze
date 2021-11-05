@@ -142,6 +142,7 @@ class FirebaseAuthManager {
     
     func getJoinedGroups(completion: @escaping (_ groups: [Group]) -> Void) {
         var groups = [Group]()
+        let dispatchGroup = DispatchGroup()
         ref.child("\(Constants.FirebaseKeys.users)/\(self.getCurrentUser()!.uid)/\(Constants.FirebaseKeys.groups)").getData { [weak self] error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -151,12 +152,44 @@ class FirebaseAuthManager {
                 print("couldn't cast value to [string: any]")
                 return
             }
+
             for (key, value) in snapshotValue {
+                dispatchGroup.enter()
                 guard let group = value as? [String: Any], let creator = group[Constants.FirebaseKeys.creator] as? String else { return }
-                let newGroup = Group(groupID: key, creator: creator, members: [creator, self.getCurrentUser()!.uid])
-                groups.append(newGroup)
+                self.getGroupMembers(by: creator, with: key) { members in
+                    if let members = members {
+                        let newGroup = Group(groupID: key, creator: creator, members: members)
+                        groups.append(newGroup)
+                    }
+                    dispatchGroup.leave()
+                }
             }
-            completion(groups)
+            dispatchGroup.notify(queue: .main) {
+                completion(groups)
+            }
+        }
+    }
+    
+    func getGroupMembers(by creator: String, with id: String, completion: @escaping (_ members: [String]?) -> ()) {
+        ref.child("\(Constants.FirebaseKeys.users)/\(creator)/\(Constants.FirebaseKeys.myGroups)/\(id)").getData { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            guard let snapshotValue = snapshot.value as? [String: Any] else {
+                print("couldn't cast value to [string: any]")
+                return
+            }
+            guard let groupMembers = snapshotValue["members"] as? [String: String] else {
+                completion(nil)
+                return
+            }
+            var members = [String]()
+            for (_, value) in groupMembers {
+                members.append(value)
+            }
+            completion(members)
+            print(members)
         }
     }
 }

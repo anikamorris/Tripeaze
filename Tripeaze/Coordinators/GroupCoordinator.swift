@@ -25,4 +25,11 @@ class GroupCoordinator: Coordinator {
                                                     selectedImage: UIImage(systemName:  "person.3.fill"))
         navigationController.pushViewController(groupController, animated: false)
     }
+    
+    func goToDetailVC(_ group: Group) {
+        let groupDetailController = GroupDetailController()
+        groupDetailController.coordinator = self
+        groupDetailController.group = group
+        navigationController.pushViewController(groupDetailController, animated: true)
+    }
 }

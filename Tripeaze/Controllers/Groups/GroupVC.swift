@@ -145,5 +145,8 @@ extension GroupController: UITableViewDataSource {
 }
 
 extension GroupController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let group = groups[indexPath.row]
+        coordinator?.goToDetailVC(group)
+    }
 }
