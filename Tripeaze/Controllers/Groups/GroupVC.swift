@@ -32,6 +32,14 @@ class GroupController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    let segmentedControl: UISegmentedControl = {
+        let segmentItems = ["My Groups", "Friend's Groups"]
+        let control = UISegmentedControl(items: segmentItems)
+        control.translatesAutoresizingMaskIntoConstraints = false
+        control.selectedSegmentIndex = 0
+        control.addTarget(self, action: #selector(switchSegmentedControl(_:)), for: .valueChanged)
+        return control
+    }()
     let groupTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(GroupCell.self, forCellReuseIdentifier: GroupCell.identifier)
@@ -55,7 +63,7 @@ class GroupController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getGroups()
+        getMyGroups()
     }
     
     //MARK: Methods
@@ -64,6 +72,7 @@ class GroupController: UIViewController {
         view.addSubview(friendTextField)
         view.addSubview(findFriendButton)
         view.addSubview(createGroupButton)
+        view.addSubview(segmentedControl)
         view.addSubview(groupTableView)
         NSLayoutConstraint.activate([
             friendTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -81,18 +90,29 @@ class GroupController: UIViewController {
             createGroupButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
             createGroupButton.topAnchor.constraint(equalTo: findFriendButton.bottomAnchor, constant: 50),
             
-            groupTableView.topAnchor.constraint(equalTo: createGroupButton.bottomAnchor, constant: 20),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            segmentedControl.topAnchor.constraint(equalTo: createGroupButton.bottomAnchor, constant: 20),
+            segmentedControl.heightAnchor.constraint(equalToConstant: 25),
+            
+            groupTableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 5),
             groupTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             groupTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            groupTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            groupTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
         ])
     }
     
-    private func getGroups() {
+    private func getMyGroups() {
+        groups = []
         authManager.getMyGroups() { [weak self] groups in
             self?.groups = groups
             self?.groupTableView.reloadData()
         }
+    }
+    
+    private func getJoinedGroups() {
+        groups = []
         authManager.getJoinedGroups { [weak self] groups in
             self?.groups.append(contentsOf: groups)
             self?.groupTableView.reloadData()
@@ -101,6 +121,17 @@ class GroupController: UIViewController {
     
     private func display(_ alertController: UIAlertController) {
         coordinator?.navigationController.present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func switchSegmentedControl(_ control: UISegmentedControl) {
+        switch (control.selectedSegmentIndex) {
+        case 0:
+            getMyGroups()
+        case 1:
+            getJoinedGroups()
+        default:
+            break
+        }
     }
     
     @objc func findFriendTapped() {
