@@ -90,14 +90,14 @@ class GroupController: UIViewController {
             createGroupButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
             createGroupButton.topAnchor.constraint(equalTo: findFriendButton.bottomAnchor, constant: 50),
             
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             segmentedControl.topAnchor.constraint(equalTo: createGroupButton.bottomAnchor, constant: 20),
             segmentedControl.heightAnchor.constraint(equalToConstant: 25),
             
             groupTableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 5),
-            groupTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            groupTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            groupTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            groupTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             groupTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
         ])
@@ -116,6 +116,22 @@ class GroupController: UIViewController {
         authManager.getJoinedGroups { [weak self] groups in
             self?.groups.append(contentsOf: groups)
             self?.groupTableView.reloadData()
+        }
+    }
+    
+    private func getMemberNames(_ group: Group, completion: @escaping (_ names: [String]) -> ()) {
+        var names = [String]()
+        let dispatchGroup = DispatchGroup()
+        for member in group.members {
+            dispatchGroup.enter()
+            FirebaseAuthManager().getName(from: member) { name in
+                guard let name = name else { return }
+                names.append(name)
+                dispatchGroup.leave()
+            }
+        }
+        dispatchGroup.notify(queue: .main) {
+            completion(names)
         }
     }
     
@@ -178,6 +194,8 @@ extension GroupController: UITableViewDataSource {
 extension GroupController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let group = groups[indexPath.row]
-        coordinator?.goToDetailVC(group)
+        getMemberNames(group) { [weak self] names in
+            self?.coordinator?.goToDetailVC(group, names)
+        }
     }
 }

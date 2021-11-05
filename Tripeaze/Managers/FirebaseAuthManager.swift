@@ -98,6 +98,16 @@ class FirebaseAuthManager {
         })
     }
     
+    func getName(from id: String, completion: @escaping (_ name: String?) -> ()) {
+        ref.child("\(Constants.FirebaseKeys.users)/\(id)/name").getData { error, snapshot in
+            guard error == nil, let name = snapshot.value as? String else {
+                completion(nil)
+                return
+            }
+            completion(name)
+        }
+    }
+    
     func addFriendToGroup(username: String, groupID: String, completion: @escaping (_ success: Bool) -> Void) {
         findUserID(from: username) { [weak self] uid in
             guard let `self` = self, let uid = uid else {
@@ -180,7 +190,7 @@ class FirebaseAuthManager {
                 print("couldn't cast value to [string: any]")
                 return
             }
-            guard let groupMembers = snapshotValue["members"] as? [String: String] else {
+            guard let groupMembers = snapshotValue[Constants.FirebaseKeys.members] as? [String: String] else {
                 completion(nil)
                 return
             }

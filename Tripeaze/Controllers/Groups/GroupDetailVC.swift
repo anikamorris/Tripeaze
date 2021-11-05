@@ -13,6 +13,7 @@ class GroupDetailController: UIViewController {
     //MARK: Properties
     weak var coordinator: GroupCoordinator?
     var group: Group!
+    var names = [String]()
     
     //MARK: Views
     var membersCollectionView: UICollectionView?
@@ -57,12 +58,12 @@ extension GroupDetailController: UICollectionViewDelegate {
 
 extension GroupDetailController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return group.members.count
+        return names.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupMemberCell.identifier, for: indexPath) as! GroupMemberCell
-        let name = group.members[indexPath.row]
+        let name = names[indexPath.row]
         cell.setNameLabel(name)
         return cell
     }

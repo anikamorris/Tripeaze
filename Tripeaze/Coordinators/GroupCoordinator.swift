@@ -26,10 +26,11 @@ class GroupCoordinator: Coordinator {
         navigationController.pushViewController(groupController, animated: false)
     }
     
-    func goToDetailVC(_ group: Group) {
+    func goToDetailVC(_ group: Group, _ names: [String]) {
         let groupDetailController = GroupDetailController()
         groupDetailController.coordinator = self
         groupDetailController.group = group
+        groupDetailController.names = names
         navigationController.pushViewController(groupDetailController, animated: true)
     }
 }
